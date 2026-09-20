@@ -26,7 +26,7 @@
     return !!(s && s.until > Date.now());
   }
 
-  /* ---------- login / logout --------- */
+  /* ---------- login / logout ---------- */
   var loginForm = $('#loginForm');
   if (loginForm) {
     loginForm.addEventListener('submit', function (e) {
@@ -59,7 +59,7 @@
     render();
   }
 
-  /* ---------- dashboard rendering ----------- */
+  /* ---------- dashboard rendering ---------- */
   var statusList = ['new', 'contacted', 'admitted', 'closed'];
 
   function render() {
@@ -194,7 +194,7 @@
     });
   }
 
-  /* table actions (event deletion) */
+  /* table actions (event delegation) */
   document.addEventListener('click', function (e) {
     var view = e.target.getAttribute && e.target.getAttribute('data-view');
     var del = e.target.getAttribute && e.target.getAttribute('data-del');
@@ -206,10 +206,10 @@
       if (q) {
         alert(
           'Enquiry ' + q.id + '\n' +
-          '------------------------------\n' +
+          '-----------------------------\n' +
           'Name: ' + q.name + '\n' +
           "Father's name: " + q.father + '\n' +
-          'DOB: ' + q.dob + ' Gender: ' + q.gender + '\n' +
+          'DOB: ' + q.dob + '  Gender: ' + q.gender + '\n' +
           'Course: ' + q.course + '\n' +
           'Phone: ' + q.phone + '\n' +
           'Email: ' + (q.email || '\u2014') + '\n' +
@@ -222,7 +222,7 @@
       }
     }
     if (del) {
-      if (confirm('Delete enquiry ' + del + '?'))* {
+      if (confirm('Delete enquiry ' + del + '?')) {
         store.set('jusm_enquiries', store.get('jusm_enquiries', []).filter(function (x) { return x.id !== del; }));
         render();
       }
@@ -232,4 +232,184 @@
       if (m) {
         alert(
           'Message ' + m.id + '\n' +
-           '-----------------------------q¸œ€¬(€€€€€€€€€€€9…µ”è€œ€¬´¹¹…µ”€¬€q¸œ€¬(€€€€€€€€€€A¡½¹”è€œ€¬´¹Á¡½¹”€¬€q¸œ€¬(€€€€€€€€€€µ…¥°è€œ€¬€¡´¹•µ…¥°ñð€qÔÈÀÄÐœ¤€¬€q¸œ€¬(€€€€€€€€€€MÕ‰©•Ðè€œ€¬€¡´¹ÍÕ‰©•Ðñð€qÔÈÀÄÐœ¤€¬€q¸œ€¬(€€€€€€€€€€5•ÍÍ…”è€œ€¬´¹µ•ÍÍ…”€¬€q¸œ€¬(€€€€€€€€€€MÕ‰µ¥ÑÑ•è€œ€¬™µÑ…Ñ”¡´¹É•…Ñ•‘Ð¤(€€€€€€€€¤ì(€€€€€ô(€€€ô(€€€¥˜€¡‘•±5Íœ¤ì(€€€€€¥˜€¡½¹™¥É´ •±•Ñ”µ•ÍÍ…”€œ€¬‘•±5Íœ€¬€œüœ¤¤¨ì(€€€€€€€ÍÑ½É”¹Í•Ð ©ÕÍµ}µ•ÍÍ…•Ìœ°ÍÑ½É”¹•Ð ©ÕÍµ}µ•ÍÍ…•Ìœ°mt¤¹™¥±Ñ•È¡™Õ¹Ñ¥½¸€¡à¤ìÉ•ÑÕÉ¸à¹¥€„ôô‘•±5Íœìô¤¤ì(€€€€€€€É•¹‘•È ¤ì(€€€ô(€€€ô(€ô¤ì((€‘½Õµ•¹Ð¹…‘‘Ù•¹Ñ1¥ÍÑ•¹•È ¡…¹”œ°™Õ¹Ñ¥½¸€¡”¤ì(€€€¥˜€¡”¹Ñ…É•Ð¹±…ÍÍ1¥ÍÐ€˜˜”¹Ñ…É•Ð¹±…ÍÍ1¥ÍÐ¹½¹Ñ…¥¹Ì ÍÑ…ÑÕÍM•°œ¤¤ì(€€€€€Ù…È¥€ô”¹Ñ…É•Ð¹•ÑÑÑÉ¥‰ÕÑ” ‘…Ñ„µ¥œ¤ì(€€€€€Ù…È±¥ÍÐ€ôÍÑ½É”¹•Ð ©ÕÍµ}•¹ÅÕ¥É¥•Ìœ°mt¤ì(€€€€€Ù…È¥Ñ•´€ô±¥ÍÐ¹™¥¹¡™Õ¹Ñ¥½¸€¡à¤ìÉ•ÑÕÉ¸à¹¥€ôôô¥ìô¤ì(€€€€€¥˜€¡¥Ñ•´¤ì(€€€€€€€¥Ñ•´¹ÍÑ…ÑÕÌ€ô”¹Ñ…É•Ð¹Ù…±Õ”ì(€€€€€€€ÍÑ½É”¹Í•Ð ©ÕÍµ}•¹ÅÕ¥É¥•Ìœ°±¥ÍÐ¤ì(€€€€€€€É•¹‘•È ¤ì(€€€€€ô(€€€ô(€ô¤ì((€€¼¨€´´´´´´´´´´´¡…¹”Á…ÍÍÝ½É€´´´´´´´´´´€¨¼(€Ù…ÈÁÝ½É´€ô€ œÁÝ½É´œ¤ì(€¥˜€¡ÁÝ½É´¤ì(€€€ÁÝ½É´¹…‘‘Ù•¹Ñ1¥ÍÑ•¹•È ÍÕ‰µ¥Ðœ°™Õ¹Ñ¥½¸€¡”¤ì(€€€€€”¹ÁÉ•Ù•¹Ñ•™…Õ±Ð ¤ì(€€€€€Ù…È•ÉÉ°€ô€ œÁÝÉÈœ¤ì(€€€€€Ù…ÈÉ•‘Ì€ô•ÑÉ•‘Ì ¤ì(€€€€€Ù…È½±‘AÜ€ôÁÝ½É´¹ÁÝ=±¹Ù…±Õ”ì(€€€€€Ù…È¹•ÝAÜ€ôÁÝ½É´¹ÁÝ9•Ü¹Ù…±Õ”ì(€€€€€Ù…È½¹™AÜ€ôÁÝ½É´¹ÁÝ½¹˜¹Ù…±Õ”ì(€€€€€¥˜€¡½±‘AÜ€„ôôÉ•‘Ì¹Á…ÍÌ¤ì(€€€€€€€•ÉÉ°¹Ñ•áÑ½¹Ñ•¹Ð€ô€ÕÉÉ•¹ÐÁ…ÍÍÝ½É¥Ì¥¹½ÉÉ•Ð¸œì(€€€€€€€•ÉÉ°¹±…ÍÍ1¥ÍÐ¹…‘ Í¡½Üœ¤ì(€€€€€€€É•ÑÕÉ¸ì(€€€€€ô(€€€€€¥˜€¡¹•ÝAÜ¹±•¹Ñ €ð€Ø¤ì(€€€€€€€•ÉÉ°¹Ñ•áÑ½¹Ñ•¹Ð€ô€9•ÜÁ…ÍÍÝ½ÉµÕÍÐ‰”…Ð±•…ÍÐ€Ø¡…É…Ñ•ÉÌ¸œì(€€€€€€€•ÉÉ°¹±…ÍÍ1¥ÍÐ¹…‘ Í¡½Üœ¤ì(€€€€€€€É•ÑÕÉ¸ì(€€€€€ô(€€€€€¥˜€¡¹•ÝAÜ€„ôô½¹™AÜ¤ì(€€€€€€€•ÉÉ°¹Ñ•áÑ½¹Ñ•¹Ð€ô€9•ÜÁ…ÍÍÝ½É‘Ì‘¼¹½Ðµ…Ñ ¸œì(€€€€€€€•ÉÉ°¹±…ÍÍ1¥ÍÐ¹…‘ Í¡½Üœ¤ì(€€€€€€€É•ÑÕÉ¸ì(€€€€€ô(€€€€€ÍÑ½É”¹Í•Ð¡IM}-d°ìÕÍ•ÈèÉ•‘Ì¹ÕÍ•È°Á…ÍÌè¹•ÝAÜô¤ì(€€€€€ÁÝ½É´¹É•Í•Ð ¤ì(€€€€€•ÉÉ°¹±…ÍÍ1¥ÍÐ¹É•µ½Ù” Í¡½Üœ¤ì(€€€€€…±•ÉÐ A…ÍÍÝ½É¡…¹•ÍÕ•ÍÍ™Õ±±ä¸œ¤ì(€€€ô¤ì(€ô((€€¼¨€´´´´´´´´´´´½¹Ñ•¹Ð•‘¥Ñ½È€¡…¹¹½Õ¹•µ•¹ÑÌ€¼•Ù•¹ÑÌ€¼½ÕÉÍ•Ì¤€´´´´´´´´´´´´€¨¼(€Ù…È=YII%}-d€ô€©ÕÍµ}½¹Ñ•¹Ñ}½Ù•ÉÉ¥‘•Ìœì((€™Õ¹Ñ¥½¸ÕÉÉ•¹Ñ…Ñ„ ¤ì(€€€Ù…È¼€ôÍÑ½É”¹•Ð¡=YII%}-d°¹Õ±°¤ñðíôì(€€€Ù…È€ôÝ¥¹‘½Ü¹)UM4ñðíôì(€€€É•ÑÕÉ¸ì(€€€€€…¹¹½Õ¹•µ•¹ÑÌè¼¹…¹¹½Õ¹•µ•¹ÑÌñð¹…¹¹½Õ¹•µ•¹ÑÌñðmt°(€€€€€•Ù•¹ÑÌè¼¹•Ù•¹ÑÌñð¹•Ù•¹ÑÌñðmt°(€€€€€½ÕÉÍ•Ìè¼¹½ÕÉÍ•Ìñð¹½ÕÉÍ•Ìñðmt(€€€ôì(€ô((€Ý¥¹‘½Ü¹±½…‘½¹Ñ•¹Ñ‘¥Ñ½È€ô™Õ¹Ñ¥½¸€ ¤ì(€€€Ù…È€ôÕÉÉ•¹Ñ…Ñ„ ¤ì(€€€€ œÑ¹¹½Õ¹•µ•¹ÑÌœ¤¹Ù…±Õ”€ô¹…¹¹½Õ¹•µ•¹ÑÌ¹©½¥¸ q¸œ¤ì(€€€€ œÑÙ•¹ÑÌœ¤¹Ù…±Õ”€ô¹•Ù•¹ÑÌ¹µ…À¡™Õ¹Ñ¥½¸€¡”¤ì(€€€€€É•ÑÕÉ¸”¹‘…Ñ”€¬€œð€œ€¬”¹Ñ¥Ñ±”€¬€œð€œ€¬”¹‘•ÍŒì(€€€ô¤¹©½¥¸ q¸œ¤ì(€€€€ œÑ½ÕÉÍ•Ìœ¤¹Ù…±Õ”€ô¹½ÕÉÍ•Ì¹µ…À¡™Õ¹Ñ¥½¸€¡Œ¤ì(€€€€€É•ÑÕÉ¸mŒ¹¥°Œ¹¹…µ”°Œ¹‘ÕÉ…Ñ¥½¸°Œ¹Í•…ÑÌ°Œ¹™•”°Œ¹…‘µ¥ÍÍ¥½¹•”°Œ¹•±¥¥‰¥±¥Ñä°Œ¹‘•ÍŒ°Œ¹Ñ…œñð€œœ°Œ¹ÕÉ‘Ôñð€œt¹©½¥¸ œð€œ¤ì(€€€ô¤¹©½¥¸ q¸œ¤ì(€ôì((€Ù…È½¹Ñ•¹ÑM…Ù”€ô€ œ½¹Ñ•¹ÑM…Ù”œ¤ì(€¥˜€¡½¹Ñ•¹ÑM…Ù”¤ì(€€€½¹Ñ•¹ÑM…Ù”¹…‘‘Ù•¹Ñ1¥ÍÑ•¹•È ±¥¬œ°™Õ¹Ñ¥½¸€ ¤ì(€€€€€Ù…ÈµÍœ€ô€ œ½¹Ñ•¹Ñ5Íœœ¤ì(€€€€€™Õ¹Ñ¥½¸Í¡½Ü¡Ñ•áÐ°½½¤ì(€€€€€€€µÍœ¹¡¥‘‘•¸€ô™…±Í”ì(€€€€€€€µÍœ¹Ñ•áÑ½¹Ñ•¹Ð€ôÑ•áÐì(€€€€€€€µÍœ¹ÍÑå±”¹‰½É‘•É1•™Ñ½±½È€ô½½€ü€œŒÁÙˆÑ˜œ€è€œŒÀÌäÉˆœì(€€€€€€€µÍœ¹ÍÑå±”¹‰…­É½Õ¹€ô½½€ü€œ”Ý˜É•Œœ€è€œ™‘••„œì(€€€€€ô(€€€€€™Õ¹Ñ¥½¸±¥¹•Ì¡¥¤ì(€€€€€€€É•ÑÕÉ¸€¡¥¤¹Ù…±Õ”¹ÍÁ±¥Ð q¸œ¤¹µ…À¡™Õ¹Ñ¥½¸€¡Ì¤ìÉ•ÑÕÉ¸Ì¹ÑÉ¥´ ¤ìô¤¹™¥±Ñ•È¡™Õ¹Ñ¥½¸€¡Ì¤ìÉ•ÑÕÉ¸Ì€„ôô€œœìô¤ì(€€€€€ô((€€€€€€¼¨…¹¹½Õ¹•µ•¹ÑÌ€¨¼(€€€€€Ù…È…¹¹½Õ¹•µ•¹ÑÌ€ô±¥¹•Ì œÑ¹¹½Õ¹•µ•¹ÑÌœ¤ì(€€€€€¥˜€ ……¹¹½Õ¹•µ•¹ÑÌ¹±•¹Ñ ¤ì(€€€€€€€Í¡½Ü ¹¹½Õ¹•µ•¹ÑÌ…¹¹½Ð‰”•µÁÑä¸‘…Ð±•…ÍÐ½¹”±¥¹”°½ÈÕÍ”€‰I•Í•ÐÑ¼•™…Õ±ÑÌˆ¸œ°™…±Í”¤ì(€€€€€€€É•ÑÕÉ¸ì(€€€€€ô((€€€€€€¼¨•Ù•¹ÑÌè‘…Ñ”ðÑ¥Ñ±”ð‘•ÍŒ€¨¼(€€€€€Ù…È•Ù•¹ÑÌ€ômtì(€€€€€Ù…È‰…‘Ù•¹Ð€ô€œœì(€€€€€±¥¹•Ì œÑÙ•¹ÑÌœ¤¹™½É… ¡™Õ¹Ñ¥½¸€¡±¥¹”¤ì(€€€€€€€Ù…ÈÀ€ô±¥¹”¹ÍÁ±¥Ð ðœ¤¹µ…À¡™Õ¹Ñ¥½¸€¡Ì¤ìÉ•ÑÕÉ¸Ì¹ÑÉ¥´ ¤ìô¤ì(€€€€€€€¥˜€¡À¹±•¹Ñ €ð€Ìñð€„½yq‘ìÑôµq‘ìÉôµq‘ìÉô¼¹Ñ•ÍÐ¡ÁlÁt¤¤ì‰…‘Ù•¹Ð€ô±¥¹”ìÉ•ÑÕÉ¸ìô(€€€€€€€•Ù•¹ÑÌ¹ÁÕÍ ¡ì‘…Ñ”èÁlÁt°Ñ¥Ñ±”èÁlÅt°‘•ÍŒèÀ¹Í±¥” È¤¹©½¥¸ œð€œ¤ô¤ì(€€€€€ô¤ì(€€€€€¥˜€¡‰…‘Ù•¹Ð¤ì(€€€€€€€Í¡½Ü Q¡¥Ì•Ù•¹Ð±¥¹”¥Ì¹½ÐÙ…±¥è€ˆœ€¬‰…‘Ù•¹Ð€¬€œˆ¸UÍ”eeedµ54µðQ¥Ñ±”ð•ÍÉ¥ÁÑ¥½¸œ°™…±Í”¤ì(€€€€€€€€€É•ÑÕÉ¸ì(€€€€€ô((€€€€€€¼¨½ÕÉÍ•Ìè¥ð¹…µ”ð‘ÕÉ…Ñ¥½¸ðÍ•…ÑÌð™•”ð…‘´™•”ð•±¥¥‰¥±¥Ñäð‘•ÍŒðÑ…œðÕÉ‘Ô€¨¼(€€€€€Ù…È½ÕÉÍ•Ì€ômtì(€€€€€Ù…È‰…‘½ÕÉÍ”€ô€œœì(€€€€€±¥¹•Ì œÑ½ÕÉÍ•Ìœ¤¹™½É… ¡™Õ¹Ñ¥½¸€¡±¥¹”¤ì(€€€€€€€Ù…ÈÀ€ô±¥¹”¹ÍÁ±¥Ð ðœ¤¹µ…À¡™Õ¹Ñ¥½¸€¡Ì¤ìÉ•ÑÕÉ¸Ì¹ÑÉ¥´ ¤ìô¤ì(€€€€€€€¥˜€¡À¹±•¹Ñ €ð€àñð€…ÁlÁtñð€…ÁlÅt¤ì‰…‘½ÕÉÍ”€ô±¥¹”ìÉ•ÑÕÉ¸ìô(€€€€€€€½ÕÉÍ•Ì¹ÁÕÍ ¡ì(€€€€€€€€€¥èÁlÁt°¹…µ”èÁlÅt°‘ÕÉ…Ñ¥½¸èÁlÉt°(€€€€€€€€€Í•…ÑÌèÁ…ÉÍ•%¹Ð¡ÁlÍt°€ÄÀ¤ñð€À°™•”èÁlÑt°…‘µ¥ÍÍ¥½¹•”èÁlÕt°(€€€€€€€€€•±¥¥‰¥±¥ÑäèÁlÙt°‘•ÍŒèÁlÝt°Ñ…œèÁlátñð€½ÕÉÍ”œ°ÕÉ‘ÔèÁlåtñð€œœ(€€€€€€€ô¤ì(€€€€€ô¤ì(€€€€€¥˜€¡‰…‘½ÕÉÍ”¤ì(€€€€€€€€€Í¡½ÝUQ¡¥Ì½ÕÉÍ”±¥¹”¹••‘Ì…Ð±•…ÍÐÑ¡”™¥ÉÍÐ€à™¥•±‘Ìè€ˆœ€¬‰…‘½ÕÉÍ”€¬€œˆ¸œ°™…±Í”¤ì(€€€€€€€€€É•ÑÕÉ¸ì(€€€€€ô((€€€€€ÍÑ½É”¹Í•Ð¡=YII%}-d°ì…¹¹½Õ¹•µ•¹ÑÌè…¹¹½Õ¹•µ•¹ÑÌ°•Ù•¹ÑÌè•Ù•¹ÑÌ°½ÕÉÍ•Ìè½ÕÉÍ•Ìô¤ì(€€€€€€€Í¡½Ü M…Ù•„I•™É•Í …¹äÁ…”½˜Ñ¡”Í¥Ñ”Ñ¼Í•”å½ÕÈ•‘¥ÑÌ€¡Ñ¡•ä…ÁÁ±ä¥¸Ñ¡¥Ì‰É½ÝÍ•È¤¸œ°ÑÉÕ”¤ì(€€€ô¤ì(€ô((€Ù…È½¹Ñ•¹ÑI•Í•Ð€ô€ œ½¹Ñ•¹ÑI•Í•Ðœ¤ì(€¥˜€¡½¹Ñ•¹ÑI•Í•Ð¤ì(€€€½¹Ñ•¹ÑI•Í•Ð¹…‘‘Ù•¹Ñ1¥ÍÑ•¹•È ±¥¬œ°™Õ¹Ñ¥½¸€ ¤ì(€€€€€¥˜€ …½¹™¥É´ I•µ½Ù”10½¹Ñ•¹Ð•‘¥ÑÌ…¹É•ÍÑ½É”Ñ¡”‘•™…Õ±Ð½¹Ñ•¹Ðüœ¤¤É•ÑÕÉ¸ì(€€€€€±½…±MÑ½É…”¹É•µ½Ù•%Ñ•´¡=YII%}-d¤ì(€€€€€Ý¥¹‘½Ü¹±½…‘½¹Ñ•¹Ñ‘¥Ñ½È ¤ì(€€€€€Ù…ÈµÍœ€ô€ œ½¹Ñ•¹Ñ5Íœœ¤ì(€€€€€¥˜€¡µÍœ¤ì(€€€€€€€€€µÍœ¹¡¥‘‘•¸€ô™…±Í”ì(€€€€€€€€€µÍœ¹Ñ•áÑ½¹Ñ•¹Ð€ô€•™…Õ±ÑÌÉ•ÍÑ½É•¸I•™É•Í Ñ¡”Í¥Ñ”Á…•ÌÑ¼Í•”Ñ¡•´¸œì(€€€€€€€€€µÍœ¹ÍÑå±”¹‰½É‘•É1•™Ñ½±½È€ô€œŒÁÙˆÑ˜œì(€€€€€€€€€€€µÍœ¹ÍÑå±”¹‰…­É½Õ¹€ô€œ”Ý˜É•Œœì(€€€€€€€ô(€€€€€ô¤ì(€ô((€€¼¨€´´´´´´´´´´‰½½Ð€´´´´´´´´´´€¨¼(€¥˜€¡¥Í1½•‘%¸ ¤¤Í¡½Ý…Í¡‰½…É ¤ì(€•±Í”€ œ±½¥¹]É…Àœ¤¹¡¥‘‘•¸€ô™…±Í”ì((€€¼¨€´´´´´´´´´´¡•±Á•ÉÌ€´´´´´´´´´´€¨¼(€Ù…È9P€ôì…µÀè€…µÀìœ°±Ðè€±Ðìœ°Ðè€Ðìœ°ÅÕ½Ðè€ÅÕ½Ðìœ°ÍÄè€œŒÌäìœôì(€™Õ¹Ñ¥½¸•ÍŒ¡ÍÑÈ¤ì(€€€É•ÑÕÉ¸MÑÉ¥¹œ¡ÍÑÈ€ôô¹Õ±°€ü€œœ€èÍÑÈ¤¹É•Á±…” ½l˜ðøˆt½œ°™Õ¹Ñ¥½¸€¡ ¤ì(€€€€€É•ÑÕÉ¸€œ˜œ€¬€¡ €ôôô€œ˜œ€ü9P¹…µÀ€è €ôôô€œðœ€ü9P¹±Ð€è €ôôô€œøœ€ü9P¹Ð€è €ôôô€œˆœ€ü9P¹ÅÕ½Ð€è9P¹ÍÄ¤ì(€€€ô¤ì(€ô(€™Õ¹Ñ¥½¸‘½Ý¹±½…¡™¥±•¹…µ”°Ñ•áÐ°µ¥µ”¤ì(€€€Ù…È‰±½ˆ€ô¹•Ü	±½ˆ¡lqÕœ€¬Ñ•áÑt°ìÑåÁ”è€¡µ¥µ”ñð€Ñ•áÐ½Á±…¥¸œ¤€¬€œí¡…ÉÍ•ÐõÕÑ˜´àœô¤ì(€€€Ù…ÈÕÉ°€ôUI0¹É•…Ñ•=‰©•ÑUI0¡‰±½ˆ¤ì(€€€Ù…È„€ô‘½Õµ•¹Ð¹É•…Ñ•±•µ•¹Ð „œ¤ì(€€€„¹¡É•˜€ôÕÉ°ì„¹‘½Ý¹±½…€ô™¥±•¹…µ”ì(€€€‘½Õµ•¹Ð¹‰½‘ä¹…ÁÁ•¹‘¡¥±¡„¤ì(€€€„¹±¥¬ ¤ì(€€€„¹É•µ½Ù” ¤ì(€€€Í•ÑQ¥µ•½ÕÐ¡™Õ¹Ñ¥½¸€ ¤ìUI0¹É•Ù½­•=‰©•ÑUI0¡ÕÉ°¤ìô°€ÄÀÀÀ¤ì(€ô)ô¤ ¤ì(
+          '-----------------------------\n' +
+          'Name: ' + m.name + '\n' +
+          'Phone: ' + m.phone + '\n' +
+          'Email: ' + (m.email || '\u2014') + '\n' +
+          'Subject: ' + (m.subject || '\u2014') + '\n' +
+          'Message: ' + m.message + '\n' +
+          'Submitted: ' + fmtDate(m.createdAt)
+        );
+      }
+    }
+    if (delMsg) {
+      if (confirm('Delete message ' + delMsg + '?')) {
+        store.set('jusm_messages', store.get('jusm_messages', []).filter(function (x) { return x.id !== delMsg; }));
+        render();
+      }
+    }
+  });
+
+  document.addEventListener('change', function (e) {
+    if (e.target.classList && e.target.classList.contains('statusSel')) {
+      var id = e.target.getAttribute('data-id');
+      var list = store.get('jusm_enquiries', []);
+      var item = list.find(function (x) { return x.id === id; });
+      if (item) {
+        item.status = e.target.value;
+        store.set('jusm_enquiries', list);
+        render();
+      }
+    }
+  });
+
+  /* ---------- change password ---------- */
+  var pwForm = $('#pwForm');
+  if (pwForm) {
+    pwForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var errEl = $('#pwErr');
+      var creds = getCreds();
+      var oldPw = pwForm.pwOld.value;
+      var newPw = pwForm.pwNew.value;
+      var confPw = pwForm.pwConf.value;
+      if (oldPw !== creds.pass) {
+        errEl.textContent = 'Current password is incorrect.';
+        errEl.classList.add('show');
+        return;
+      }
+      if (newPw.length < 6) {
+        errEl.textContent = 'New password must be at least 6 characters.';
+        errEl.classList.add('show');
+        return;
+      }
+      if (newPw !== confPw) {
+        errEl.textContent = 'New passwords do not match.';
+        errEl.classList.add('show');
+        return;
+      }
+      store.set(CREDS_KEY, { user: creds.user, pass: newPw });
+      pwForm.reset();
+      errEl.classList.remove('show');
+      alert('Password changed successfully.');
+    });
+  }
+
+  /* ---------- content editor (announcements / events / courses) ---------- */
+  var OVERRIDE_KEY = 'jusm_content_overrides';
+
+  function currentData() {
+    var o = store.get(OVERRIDE_KEY, null) || {};
+    var d = window.JUSM || {};
+    return {
+      announcements: o.announcements || d.announcements || [],
+      events: o.events || d.events || [],
+      courses: o.courses || d.courses || []
+    };
+  }
+
+  window.loadContentEditor = function () {
+    var d = currentData();
+    $('#ctAnnouncements').value = d.announcements.join('\n');
+    $('#ctEvents').value = d.events.map(function (e) {
+      return e.date + ' | ' + e.title + ' | ' + e.desc;
+    }).join('\n');
+    $('#ctCourses').value = d.courses.map(function (c) {
+      return [c.id, c.name, c.duration, c.seats, c.fee, c.admissionFee, c.eligibility, c.desc, c.tag || '', c.urdu || ''].join(' | ');
+    }).join('\n');
+  };
+
+  var contentSave = $('#contentSave');
+  if (contentSave) {
+    contentSave.addEventListener('click', function () {
+      var msg = $('#contentMsg');
+      function show(text, good) {
+        msg.hidden = false;
+        msg.textContent = text;
+        msg.style.borderLeftColor = good ? '#0d6b4f' : '#c0392b';
+        msg.style.background = good ? '#e7f2ec' : '#fdecea';
+      }
+      function lines(id) {
+        return $(id).value.split('\n').map(function (s) { return s.trim(); }).filter(function (s) { return s !== ''; });
+      }
+
+      /* announcements */
+      var announcements = lines('#ctAnnouncements');
+      if (!announcements.length) {
+        show('Announcements cannot be empty. Add at least one line, or use "Reset to Defaults".', false);
+        return;
+      }
+
+      /* events: date | title | desc */
+      var events = [];
+      var badEvent = '';
+      lines('#ctEvents').forEach(function (line) {
+        var p = line.split('|').map(function (s) { return s.trim(); });
+        if (p.length < 3 || !/^\d{4}-\d{2}-\d{2}$/.test(p[0])) { badEvent = line; return; }
+        events.push({ date: p[0], title: p[1], desc: p.slice(2).join(' | ') });
+      });
+      if (badEvent) {
+        show('This event line is not valid: "' + badEvent + '". Use YYYY-MM-DD | Title | Description.', false);
+        return;
+      }
+
+      /* courses: id | name | duration | seats | fee | adm fee | eligibility | desc | tag | urdu */
+      var courses = [];
+      var badCourse = '';
+      lines('#ctCourses').forEach(function (line) {
+        var p = line.split('|').map(function (s) { return s.trim(); });
+        if (p.length < 8 || !p[0] || !p[1]) { badCourse = line; return; }
+        courses.push({
+          id: p[0], name: p[1], duration: p[2],
+          seats: parseInt(p[3], 10) || 0, fee: p[4], admissionFee: p[5],
+          eligibility: p[6], desc: p[7], tag: p[8] || 'Course', urdu: p[9] || ''
+        });
+      });
+      if (badCourse) {
+        show('This course line needs at least the first 8 fields: "' + badCourse + '".', false);
+        return;
+      }
+
+      store.set(OVERRIDE_KEY, { announcements: announcements, events: events, courses: courses });
+      show('Saved! Refresh any page of the site to see your edits (they apply in this browser).', true);
+    });
+  }
+
+  var contentReset = $('#contentReset');
+  if (contentReset) {
+    contentReset.addEventListener('click', function () {
+      if (!confirm('Remove ALL content edits and restore the default content?')) return;
+      localStorage.removeItem(OVERRIDE_KEY);
+      window.loadContentEditor();
+      var msg = $('#contentMsg');
+      if (msg) {
+        msg.hidden = false;
+        msg.textContent = 'Defaults restored. Refresh the site pages to see them.';
+        msg.style.borderLeftColor = '#0d6b4f';
+        msg.style.background = '#e7f2ec';
+      }
+    });
+  }
+
+  /* ---------- boot ---------- */
+  if (isLoggedIn()) showDashboard();
+  else $('#loginWrap').hidden = false;
+
+  /* ---------- helpers ---------- */
+  var ENT = { amp: 'amp;', lt: 'lt;', gt: 'gt;', quot: 'quot;', sq: '#39;' };
+  function esc(str) {
+    return String(str == null ? '' : str).replace(/[&<>"']/g, function (ch) {
+      return '&' + (ch === '&' ? ENT.amp : ch === '<' ? ENT.lt : ch === '>' ? ENT.gt : ch === '"' ? ENT.quot : ENT.sq);
+    });
+  }
+  function download(filename, text, mime) {
+    var blob = new Blob(['\uFEFF' + text], { type: (mime || 'text/plain') + ';charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url; a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+  }
+})();

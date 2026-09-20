@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Jamia Usmania Sabera Mission</title>
+  <meta name="description" content="Admin panel for Jamia Usmania Sabera Mission — manage admission enquiries and contact messages.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-in">
+      <a href="index.html">← Back to Website</a>
+      <span class="top-links"><a href="index.html">Home</a></span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-in">
+      <a class="brand" href="index.html">
+        <img src="images/logo.svg" alt="Jamia Usmania Sabera Mission logo">
+        <span class="brand-txt"><strong>JAMIA USMANIA</strong><small>ADMIN PANEL</small></span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Login -->
+  <div class="login-wrap" id="loginWrap" hidden>
+    <div class="login-card">
+      <a class="brand" href="index.html"><img src="images/logo.svg" alt="Logo" width="64" height="64"></a>
+      <h2>Admin Login</h2>
+      <p class="muted" style="font-size:.88rem">Restricted area — authorised staff only.</p>
+      <form id="loginForm" novalidate style="margin-top:1.4rem;text-align:left">
+        <div class="field">
+          <label for="admUser">Username</label>
+          <input type="text" id="admUser" name="admUser" required autocomplete="username" placeholder="Username">
+        </div>
+        <div class="field">
+          <label for="admPass">Password</label>
+          <input type="password" id="admPass" name="admPass" required autocomplete="current-password" placeholder="Password">
+          <span class="err" id="loginErr"></span>
+        </div>
+        <button type="submit" class="btn btn-block">Sign In</button>
+      </form>
+      <div class="hint">
+        <strong>Demo credentials:</strong> username <code>admin</code> · password <code>admin123</code><br>
+        Change the password from the dashboard after login. Demo only — see README for real security notes.
+      </div>
+    </div>
+  </div>
+
+  <!-- Dashboard -->
+  <div class="dash" id="dash">
+    <section class="section">
+      <div class="container">
+        <div class="dash-top">
+          <div>
+            <h1 style="font-size:1.4rem">Dashboard</h1>
+            <p class="muted" style="font-size:.85rem">Admission enquiries & messages (stored in this browser's localStorage)</p>
+          </div>
+          <button class="btn btn-danger btn-sm" id="logoutBtn">Logout</button>
+        </div>
+
+        <div class="chips">
+          <div class="chip"><b id="chipTotal">0</b><span>Total Enquiries</span></div>
+          <div class="chip"><b id="chipNew">0</b><span>New</span></div>
+          <div class="chip"><b id="chipContacted">0</b><span>Contacted</span></div>
+          <div class="chip"><b id="chipAdmitted">0</b><span>Admitted</span></div>
+        </div>
+
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-tab="enquiries" role="tab">Admission Enquiries</button>
+          <button class="tab" data-tab="messages" role="tab">Contact Messages</button>
+          <button class="tab" data-tab="settings" role="tab">Settings</button>
+        </div>
+
+        <!-- Enquiries / Messages tab -->
+        <div id="tableTab">
+          <div class="toolbar">
+            <input type="search" id="searchBox" placeholder="Search by name, course, phone…" aria-label="Search records">
+            <button class="btn btn-sm" id="exportBtn">Export CSV</button>
+            <button class="btn btn-danger btn-sm" id="clearBtn">Clear All</button>
+            <span class="muted" id="enqCount" style="font-size:.82rem"></span>
+          </div>
+          <div class="table-wrap">
+            <table id="recordsTable">
+              <thead>
+                <tr id="tableHead">
+                  <th>ID</th><th>Date</th><th>Name</th><th>Course</th><th>Phone</th><th>Status</th><th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Settings tab -->
+        <div id="settingsTab" hidden>
+          <div class="settings-card">
+            <h3 style="margin-bottom:1rem">Change Admin Password</h3>
+            <form id="pwForm" novalidate>
+              <div class="field">
+                <label for="pwOld">Current Password</label>
+                <input type="password" id="pwOld" name="pwOld" required autocomplete="current-password">
+              </div>
+              <div class="field">
+                <label for="pwNew">New Password (min 6 characters)</label>
+                <input type="password" id="pwNew" name="pwNew" required autocomplete="new-password">
+              </div>
+              <div class="field">
+                <label for="pwConf">Confirm New Password</label>
+                <input type="password" id="pwConf" name="pwConf" required autocomplete="new-password">
+                <span class="err" id="pwErr"></span>
+              </div>
+              <button type="submit" class="btn btn-block">Update Password</button>
+            </form>
+          </div>
+          <div class="form-note" style="margin-top:1.2rem;max-width:440px">
+            This demo stores credentials in the browser's localStorage. Anyone with access to this browser can reset them by clearing site data. For a real deployment, implement server-side login (see README.md — "Next steps").
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <div class="container">© <span id="year">2026</span> Jamia Usmania Sabera Mission · Admin Panel</div>
+    </div>
+  </footer>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/admin.js" defer></script>
+  <script defer>
+    /* settings tab toggle lives here to keep admin.js table-focused */
+    document.addEventListener('DOMContentLoaded', function () {
+      var tabs = document.querySelectorAll('.tab');
+      var tableTab = document.getElementById('tableTab');
+      var settingsTab = document.getElementById('settingsTab');
+      var tableHead = document.getElementById('tableHead');
+      function applyTab() {
+        var active = document.querySelector('.tab.active');
+        var tab = active ? active.getAttribute('data-tab') : 'enquiries';
+        if (tab === 'settings') {
+          tableTab.hidden = true; settingsTab.hidden = false;
+        } else {
+          tableTab.hidden = false; settingsTab.hidden = true;
+          tableHead.innerHTML = tab === 'messages'
+            ? '<th>ID</th><th>Date</th><th>Name</th><th>Phone / Email</th><th>Subject</th><th>Actions</th>'
+            : '<th>ID</th><th>Date</th><th>Name</th><th>Course</th><th>Phone</th><th>Status</th><th>Actions</th>';
+        }
+      }
+      tabs.forEach(function (t) {
+        t.addEventListener('click', function () {
+          tabs.forEach(function (x) { x.classList.remove('active'); });
+          t.classList.add('active');
+          applyTab();
+        });
+      });
+      applyTab();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery & Events — Jamia Usmania Sabera Mission</title>
+  <meta name="description" content="Campus life at Jamia Usmania Sabera Mission — photo gallery of classes, events, hostel and prayer hall, plus upcoming events.">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-in">
+      <a href="tel:+919000000000"><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>+91 90000 00000</a>
+      <a href="mailto:info@jamiausmania.org"><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>info@jamiausmania.org</a>
+      <span class="top-links"><a href="admin.html">Admin Login</a></span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-in">
+      <a class="brand" href="index.html">
+        <img src="images/logo.svg" alt="Jamia Usmania Sabera Mission logo">
+        <span class="brand-txt"><strong>JAMIA USMANIA</strong><small>SABERA MISSION</small></span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="courses.html">Courses</a>
+        <a href="admission.html">Admissions</a>
+        <a href="gallery.html" class="active">Gallery & Events</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="page-banner">
+    <div class="container">
+      <h1>Gallery & Events</h1>
+      <p>A glimpse into daily life at the Jamia — and what's coming up</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Photo Gallery</span>
+        <h2>Campus Life</h2>
+        <div class="bar"></div>
+        <p class="muted" style="margin-top:1rem;font-size:.85rem">Tap any photo to enlarge. (Replace these placeholder illustrations with your real photos in the images/ folder.)</p>
+      </div>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container events-split">
+      <div>
+        <div class="section-head" style="text-align:left">
+          <span class="eyebrow">Save the Date</span>
+          <h2>Upcoming Events</h2>
+          <div class="bar" style="margin-left:0"></div>
+        </div>
+        <div class="grid" data-events></div>
+      </div>
+      <div class="side-card">
+        <h3>Want to attend?</h3>
+        <p class="muted" style="font-size:.9rem;margin-bottom:1rem">Parents and well-wishers are welcome at all public events. Annual Day and the Quran competition are open to all — please reach out to the office so we can arrange seating.</p>
+        <a class="btn btn-sm" href="contact.html">Contact the Office</a>
+        <div class="form-note" style="margin-top:1.2rem">
+          Event dates may change due to moon sightings and weather. Confirm with the office before travelling.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lb-close" id="lbClose" aria-label="Close">×</button>
+    <button class="lb-prev" id="lbPrev" aria-label="Previous">❮</button>
+    <img id="lbImg" src="" alt="Enlarged photo">
+    <p class="lb-cap" id="lbCap"></p>
+    <button class="lb-next" id="lbNext" aria-label="Next">❯</button>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <img src="images/logo.svg" alt="Logo" width="48" height="48">
+          <span class="brand-txt"><strong style="color:#fff">JAMIA USMANIA</strong><small>SABERA MISSION</small></span>
+        </div>
+        <p class="about-blurb" style="margin-top:1rem">A non-profit centre of Islamic and modern education, serving the community since 2001 with knowledge, character and service.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="about.html">About Us</a>
+        <a href="courses.html">Courses & Fees</a>
+        <a href="admission.html">Admissions</a>
+        <a href="gallery.html">Gallery & Events</a>
+        <a href="contact.html">Contact</a>
+        <a href="admin.html">Admin Login</a>
+      </div>
+      <div>
+        <h4>Get in Touch</h4>
+        <ul class="f-contact">
+          <li><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Jamia Usmania Sabera Mission, 12-4-5 Near Idgah, Azampura, Hyderabad – 500020</li>
+          <li><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>+91 90000 00000</li>
+          <li><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>info@jamiausmania.org</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">© <span id="year">2026</span> Jamia Usmania Sabera Mission. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <button class="chat-fab" id="chatFab" aria-label="Chat with the Jamia assistant">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  </button>
+  <div class="chat-panel" id="chatPanel" hidden>
+    <div class="chat-head">
+      <div><h3>Ask Jamia Assistant</h3><small>AI-powered · answers about courses & admissions</small></div>
+      <button id="chatClose" aria-label="Close chat">×</button>
+    </div>
+    <div class="chat-body" id="chatBody"></div>
+    <div class="chat-suggest">
+      <button>What courses do you offer?</button>
+      <button>What are the fees?</button>
+      <button>Is hostel available?</button>
+    </div>
+    <form class="chat-form" id="chatForm">
+      <input id="chatInput" type="text" placeholder="Type your question…" maxlength="500" autocomplete="off">
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

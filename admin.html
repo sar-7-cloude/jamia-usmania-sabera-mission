@@ -14,7 +14,7 @@
   <div class="topbar">
     <div class="container topbar-in">
       <a href="index.html">← Back to Website</a>
-      <span class="top-links"><a href="index.html">Home</a></span>
+          <span class="top-links"><a href="index.html">Home</a></span>
     </div>
   </div>
 
@@ -33,7 +33,7 @@
       <a class="brand" href="index.html"><img src="images/logo.svg" alt="Logo" width="64" height="64"></a>
       <h2>Admin Login</h2>
       <p class="muted" style="font-size:.88rem">Restricted area — authorised staff only.</p>
-      <form id="loginForm" novalidate style="margin-top:1.4rem;text-align:left">
+      <form id="loginForm" novalidate style="margin-top:1.4rem;text-alig:left">
         <div class="field">
           <label for="admUser">Username</label>
           <input type="text" id="admUser" name="admUser" required autocomplete="username" placeholder="Username">
@@ -64,16 +64,17 @@
           <button class="btn btn-danger btn-sm" id="logoutBtn">Logout</button>
         </div>
 
-        <div class="chips">
-          <div class="chip"><b id="chipTotal">0</b><span>Total Enquiries</span></div>
-          <div class="chip"><b id="chipNew">0</b><span>New</span></div>
-          <div class="chip"><b id="chipContacted">0</b><span>Contacted</span></div>
-          <div class="chip"><b id="chipAdmitted">0</b><span>Admitted</span></div>
-        </div>
+          <div class="chips">
+            <div class="chip"><b id="chipTotal">0</b><span>Total Enquiries</span></div>
+            <div class="chip"><b id="chipNew">0</b><span>New</span></div>
+            <div class="chip"><b id="chipContacted">0</b><span>Contacted</span></div>
+            <div class="chip"><b id="chipAdmitted">0</b><span>Admitted</span></div>
+          </div>
 
         <div class="tabs" role="tablist">
           <button class="tab active" data-tab="enquiries" role="tab">Admission Enquiries</button>
           <button class="tab" data-tab="messages" role="tab">Contact Messages</button>
+          <button class="tab" data-tab="content" role="tab">Content Editor</button>
           <button class="tab" data-tab="settings" role="tab">Settings</button>
         </div>
 
@@ -95,6 +96,48 @@
               <tbody id="tableBody"></tbody>
             </table>
           </div>
+        </div>
+
+        <!-- Content editor tab -->
+        <div id="contentTab" hidden>
+          <div class="form-note" style="margin-bottom:1.2rem">
+            <strong>How this works:</strong> your edits are saved in this browser and appear on the site
+              immediately after you refresh (announcements ticker, course cards & fees, event list).
+            They are <strong>not</strong> visible to other visitors — for that, update <code>js/data.js</code>
+              in the GitHub repo (or ask your developer). "Reset to defaults" undoes all edits.
+          </div>
+
+          <div class="form-card mb-2">
+            <h3 style="margin-bottom:.6rem">Announcements (home page ticker)</h3>
+            <p class="muted" style="font-size:.82rem;margin-bottom:.6rem">One announcement per line.</p>
+            <div class="field">
+              <textarea id="ctAnnouncements" rows="5"></textarea>
+            </div>
+          </div>
+
+          <div class="form-card mb-2">
+            <h3 style="margin-bottom:.6rem">Upcoming Events (home & gallery pages)</h3>
+              <p class="muted" style="font-size:.82rem;margin-bottom:.6rem">One event per line, format:
+              <code>YYYY-MM-DD | Title | Short description</code></p>
+            <div class="field">
+              <textarea id="ctEvents" rows="6"></textarea>
+            </div>
+          </div>
+
+          <div class="form-card mb-2">
+            <h3 style="margin-bottom:.6rem">Courses & Fees (courses page, home preview, admission form)</h3>
+            <p class="muted" style="font-size:.82rem;margin-bottom:.6rem">One course per line, fields separated by <code>|</code> in this order:<br>
+              <code>id | name | duration | seats | monthly fee | admission fee | eligibility | description | tag (optional) | urdu (optional)</code></p>
+            <div class="field">
+              <textarea id="ctCourses" rows="8"></textarea>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:.7rem;flex-wrap:wrap">
+            <button class="btn" id="contentSave">Save Content</button>
+            <button class="btn btn-danger" id="contentReset">Reset to Defaults</button>
+          </div>
+          <div class="form-note" id="contentMsg" hidden style="margin-top:1rem"></div>
         </div>
 
         <!-- Settings tab -->
@@ -119,7 +162,7 @@
             </form>
           </div>
           <div class="form-note" style="margin-top:1.2rem;max-width:440px">
-            This demo stores credentials in the browser's localStorage. Anyone with access to this browser can reset them by clearing site data. For a real deployment, implement server-side login (see README.md — "Next steps").
+            This demo stores credentials in the browser's localStorage. Anyone with access to this browser can reset them by clearing site data. For a real deployment, implement server-side login (see README.md – "Next steps").
           </div>
         </div>
       </div>
@@ -145,14 +188,14 @@
       function applyTab() {
         var active = document.querySelector('.tab.active');
         var tab = active ? active.getAttribute('data-tab') : 'enquiries';
-        if (tab === 'settings') {
-          tableTab.hidden = true; settingsTab.hidden = false;
-        } else {
-          tableTab.hidden = false; settingsTab.hidden = true;
+          tableTab.hidden = tab !== 'enquiries'' && tab !== 'messages';
+          settingsTab.hidden = tab !== 'settings';
+          var contentTab = document.getElementById('contentTab');
+          if (contentTab) contentTab.hidden = tab !== 'content';
+          if (typeof window.loadContentEditor === 'function' && tab === 'content') window.loadContentEditor();
           tableHead.innerHTML = tab === 'messages'
             ? '<th>ID</th><th>Date</th><th>Name</th><th>Phone / Email</th><th>Subject</th><th>Actions</th>'
             : '<th>ID</th><th>Date</th><th>Name</th><th>Course</th><th>Phone</th><th>Status</th><th>Actions</th>';
-        }
       }
       tabs.forEach(function (t) {
         t.addEventListener('click', function () {

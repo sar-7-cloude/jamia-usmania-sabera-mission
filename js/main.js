@@ -26,6 +26,17 @@
   };
   window.JUSMStore = store; // used by admin.js
 
+  /* ---------- content overrides (edited from the admin Content tab) ----------
+     The admin panel can save edited announcements / events / courses to
+     localStorage under 'jusm_content_overrides'. merged() prefers those
+     edits over the defaults in data.js. */
+  function merged(key) {
+    var o = store.get('jusm_content_overrides', null);
+    if (o && o[key] !== undefined && o[key] !== null) return o[key];
+    return window.JUSM ? JUSM[key] : undefined;
+  }
+  window.JUSMData = merged;
+
   /* ---------- mobile navigation ---------- */
   var navToggle = $('#navToggle');
   if (navToggle) {
@@ -96,7 +107,7 @@
   (function initTicker() {
     var track = $('#tickerTrack');
     if (!track || !window.JUSM) return;
-    var items = JUSM.announcements.map(function (t) {
+    var items = (window.JUSMData ? JUSMData('announcements') : JUSM.announcements).map(function (t) {
       return '<span class="ticker-item">' + escapeHTML(t) + '</span>';
     }).join('');
     track.innerHTML = items + items; /* duplicate for a seamless loop */
@@ -131,7 +142,8 @@
     var wrap = $('[data-courses]');
     if (!wrap || !window.JUSM) return;
     var limit = parseInt(wrap.getAttribute('data-limit'), 10) || 0;
-    var list = limit ? JUSM.courses.slice(0, limit) : JUSM.courses;
+    var allCourses = (window.JUSMData ? JUSMData('courses') : JUSM.courses) || [];
+    var list = limit ? allCourses.slice(0, limit) : allCourses;
 
     wrap.innerHTML = list.map(function (c) {
       return (
@@ -176,7 +188,7 @@
     if (!wrap || !window.JUSM) return;
     var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     var today = new Date().toISOString().slice(0, 10);
-    wrap.innerHTML = JUSM.events
+    wrap.innerHTML = ((window.JUSMData ? JUSMData('events') : JUSM.events) || [])
       .filter(function (ev) { return ev.date >= today; })
       .slice(0, parseInt(wrap.getAttribute('data-limit'), 10) || 10)
       .map(function (ev) {
@@ -334,7 +346,7 @@
   (function preselectCourse() {
     var select = $('#admCourse');
     if (!select || !window.JUSM) return;
-    JUSM.courses.forEach(function (c) {
+    (window.JUSMData ? JUSMData('courses') : JUSM.courses).forEach(function (c) {
       var opt = document.createElement('option');
       opt.value = c.id; opt.textContent = c.name + ' \u2014 ' + c.duration;
       select.appendChild(opt);

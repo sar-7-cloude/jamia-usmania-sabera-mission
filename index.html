@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jamia Usmania Sabera Mission — Islamic & Modern Education</title>
+  <meta name="description" content="Jamia Usmania Sabera Mission — a centre of Islamic and modern education. Courses: Nazra, Hifz, Aalim, Ifta, modern schooling and computer skills. Admissions open for 2026–27.">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="container topbar-in">
+      <a href="tel:+919000000000"><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>+91 90000 00000</a>
+      <a href="mailto:info@jamiausmania.org"><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>info@jamiausmania.org</a>
+      <span class="top-links"><a href="admin.html">Admin Login</a></span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-in">
+      <a class="brand" href="index.html">
+        <img src="images/logo.svg" alt="Jamia Usmania Sabera Mission logo">
+        <span class="brand-txt"><strong>JAMIA USMANIA</strong><small>SABERA MISSION</small></span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="courses.html">Courses</a>
+        <a href="admission.html">Admissions</a>
+        <a href="gallery.html">Gallery & Events</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- Hero slider -->
+  <section class="hero">
+    <div class="hero-slider" id="heroSlider">
+      <div class="slide active">
+        <img src="images/slide1.svg" alt="Jamia campus at dawn">
+        <div class="container hero-caption">
+          <span class="badge-line">✦ Knowledge · Character · Service</span>
+          <h1>Welcome to Jamia Usmania Sabera Mission</h1>
+          <p>A caring centre of Islamic and modern education, shaping knowledgeable and sincere young minds.</p>
+          <div class="hero-cta">
+            <a class="btn btn-gold" href="admission.html">Apply for Admission</a>
+            <a class="btn btn-light" href="courses.html">Explore Courses</a>
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="images/slide2.svg" alt="Night view of the masjid and academy">
+        <div class="container hero-caption">
+          <span class="badge-line">Admissions Open 2026–27</span>
+          <h1>Nazra · Hifz · Aalim · Ifta & Modern Schooling</h1>
+          <p>Limited seats in every course. Apply early to avoid disappointment — hostel facility available for boys.</p>
+          <div class="hero-cta">
+            <a class="btn btn-gold" href="admission.html">Start Application</a>
+            <a class="btn btn-light" href="contact.html">Visit or Call Us</a>
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="images/slide3.svg" alt="Golden hour view of the institute">
+        <div class="container hero-caption">
+          <span class="badge-line">✦ Ilm with Akhlaq</span>
+          <h1>Shape a Life of Knowledge & Good Character</h1>
+          <p>Qualified teachers, zakaat-supported scholarships and a disciplined, caring environment for every child.</p>
+          <div class="hero-cta">
+            <a class="btn btn-gold" href="admission.html">Enquire Now</a>
+            <a class="btn btn-light" href="gallery.html">See Campus Life</a>
+          </div>
+        </div>
+      </div>
+      <button class="slider-arrow" id="slidePrev" aria-label="Previous slide">❮</button>
+      <button class="slider-arrow" id="slideNext" aria-label="Next slide">❯</button>
+      <div class="slider-dots" id="sliderDots"></div>
+    </div>
+  </section>
+
+  <!-- Announcement ticker -->
+  <div class="ticker" aria-label="Latest announcements">
+    <span class="ticker-label">LATEST</span>
+    <div class="ticker-view"><div class="ticker-track" id="tickerTrack"></div></div>
+  </div>
+
+  <!-- Highlights -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Why Choose Us</span>
+        <h2>Everything Your Child Needs to Grow</h2>
+        <div class="bar"></div>
+      </div>
+      <div class="grid g3">
+        <div class="icon-card">
+          <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4H6.5A2.5 2.5 0 0 0 4 6.5v13z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-2.5"/></svg></div>
+          <h3>Quran-Centred Learning</h3>
+          <p>Nazra, Hifz and Aalim courses taught by qualified huffaz and ulama with daily revision.</p>
+        </div>
+        <div class="icon-card">
+          <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21h16M6 21v-6a6 6 0 0 1 4-5.7M12 3a3 3 0 0 0-3 3c0 1.5 3 3.5 3 3.5S15 7.5 15 6a3 3 0 0 0-3-3zM18 21v-6c0-2.5-1.5-4.5-4-5.7"/></svg></div>
+          <h3>Qualified Faculty</h3>
+          <p>Experienced teachers for both Islamic sciences and modern subjects, with small class sizes.</p>
+        </div>
+        <div class="icon-card">
+          <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 2 8l10 5 10-5-10-5z"/><path d="M6 10.5V15c0 1.4 12 1.4 12 0v-4.5"/></svg></div>
+          <h3>Modern Schooling (NIOS)</h3>
+          <p>Class 10 education through the National Institute of Open Schooling alongside deeni taaleem.</p>
+        </div>
+        <div class="icon-card">
+          <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 21 9-16 9 16zM12 9v1m0 3v1m0 3v1"/></svg></div>
+          <h3>Moral Training</h3>
+          <p>Daily tarbiyah: salah in jamaat, adaab, akhlaq and seerah woven into everyday routine.</p>
+        </div>
+        <div class="icon-card">
+          <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+          <h3>Computer & Vocational Skills</h3>
+          <p>Practical computer literacy and vocational training so graduates can earn with dignity.</p>
+        </div>
+        <div class="icon-card">
+          <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3>Zakaat-Supported Scholarships</h3>
+          <p>No deserving child is turned away for lack of fees — supported by well-wishers' sadaqah and zakaat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About preview -->
+  <section class="section alt">
+    <div class="container about-split">
+      <div class="about-media">
+        <img src="images/about.svg" alt="Jamia Usmania Sabera Mission campus">
+      </div>
+      <div>
+        <span class="eyebrow">About the Jamia</span>
+        <h2>Serving the Community Since 2001</h2>
+        <p class="lead" style="margin:.8rem 0 1rem">Jamia Usmania Sabera Mission began with a handful of students under one teacher. Today, alhamdulillah, it educates hundreds of students in Islamic sciences and modern subjects under one roof.</p>
+        <ul class="checklist">
+          <li>Combined deeni and modern education from Class KG onwards</li>
+          <li>Separate, supervised arrangement for girls' education</li>
+          <li>Clean hostel with warden care and home-style meals</li>
+          <li>Monthly progress reports shared with parents</li>
+        </ul>
+        <a class="btn" href="about.html" style="margin-top:1.2rem">Read Our Full Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="container stats-grid">
+      <div class="stat"><div class="stat-num" data-count="850" data-suffix="+">0</div><div class="stat-label">Students</div></div>
+      <div class="stat"><div class="stat-num" data-count="45" data-suffix="+">0</div><div class="stat-label">Teachers & Staff</div></div>
+      <div class="stat"><div class="stat-num" data-count="25" data-suffix="+">0</div><div class="stat-label">Years of Service</div></div>
+      <div class="stat"><div class="stat-num" data-count="3000" data-suffix="+">0</div><div class="stat-label">Alumni</div></div>
+    </div>
+  </section>
+
+  <!-- Courses preview -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Our Courses</span>
+        <h2>From First Bismillah to Ifta</h2>
+        <div class="bar"></div>
+      </div>
+      <div class="grid g3" data-courses data-limit="3"></div>
+      <p class="text-center mt-2">
+        <a class="btn btn-outline" href="courses.html">View All Courses & Fees</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Events + notice board -->
+  <section class="section alt">
+    <div class="container events-split">
+      <div>
+        <div class="section-head" style="text-align:left;margin-left:0">
+          <span class="eyebrow">Mark the Date</span>
+          <h2>Upcoming Events</h2>
+          <div class="bar" style="margin-left:0"></div>
+        </div>
+        <div class="grid" data-events data-limit="4"></div>
+      </div>
+      <div class="side-card">
+        <h3>Notice Board</h3>
+        <ul class="notice-list">
+          <li>Admission test for Hifz batch 2026–27: every Sunday, 10 am.</li>
+          <li>Hostel seats are limited — register early at the office.</li>
+          <li>Sponsor a student's education: contact the office for zakaat/sadaqah.</li>
+          <li>School uniforms and books available at the campus store.</li>
+          <li>Transport facility on selected routes — enquire at the office.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="container">
+      <h2>Admissions Open for 2026–27</h2>
+      <p>Give your child the gift of the Quran along with a modern education. Seats are limited.</p>
+      <a class="btn btn-gold" href="admission.html">Apply for Admission</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <img src="images/logo.svg" alt="Logo" width="48" height="48">
+          <span class="brand-txt"><strong style="color:#fff">JAMIA USMANIA</strong><small>SABERA MISSION</small></span>
+        </div>
+        <p class="about-blurb" style="margin-top:1rem">A non-profit centre of Islamic and modern education, serving the community since 2001 with knowledge, character and service.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="about.html">About Us</a>
+        <a href="courses.html">Courses & Fees</a>
+        <a href="admission.html">Admissions</a>
+        <a href="gallery.html">Gallery & Events</a>
+        <a href="contact.html">Contact</a>
+        <a href="admin.html">Admin Login</a>
+      </div>
+      <div>
+        <h4>Get in Touch</h4>
+        <ul class="f-contact">
+          <li><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Jamia Usmania Sabera Mission, 12-4-5 Near Idgah, Azampura, Hyderabad – 500020</li>
+          <li><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>+91 90000 00000</li>
+          <li><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>info@jamiausmania.org</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">© <span id="year">2026</span> Jamia Usmania Sabera Mission. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- AI assistant widget -->
+  <button class="chat-fab" id="chatFab" aria-label="Chat with the Jamia assistant">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  </button>
+  <div class="chat-panel" id="chatPanel" hidden>
+    <div class="chat-head">
+      <div><h3>Ask Jamia Assistant</h3><small>AI-powered · answers about courses & admissions</small></div>
+      <button id="chatClose" aria-label="Close chat">×</button>
+    </div>
+    <div class="chat-body" id="chatBody"></div>
+    <div class="chat-suggest">
+      <button>What courses do you offer?</button>
+      <button>What are the fees?</button>
+      <button>Is hostel available?</button>
+    </div>
+    <form class="chat-form" id="chatForm">
+      <input id="chatInput" type="text" placeholder="Type your question…" maxlength="500" autocomplete="off">
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

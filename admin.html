@@ -188,14 +188,14 @@
       function applyTab() {
         var active = document.querySelector('.tab.active');
         var tab = active ? active.getAttribute('data-tab') : 'enquiries';
-          tableTab.hidden = tab !== 'enquiries'' && tab !== 'messages';
-          settingsTab.hidden = tab !== 'settings';
-          var contentTab = document.getElementById('contentTab');
-          if (contentTab) contentTab.hidden = tab !== 'content';
-          if (typeof window.loadContentEditor === 'function' && tab === 'content') window.loadContentEditor();
-          tableHead.innerHTML = tab === 'messages'
-            ? '<th>ID</th><th>Date</th><th>Name</th><th>Phone / Email</th><th>Subject</th><th>Actions</th>'
-            : '<th>ID</th><th>Date</th><th>Name</th><th>Course</th><th>Phone</th><th>Status</th><th>Actions</th>';
+        tableTab.hidden = tab !== 'enquiries' && tab !== 'messages';
+        settingsTab.hidden = tab !== 'settings';
+        var contentTab = document.getElementById('contentTab');
+        if (contentTab) contentTab.hidden = tab !== 'content';
+        if (typeof window.loadContentEditor === 'function' && tab === 'content') window.loadContentEditor();
+        tableHead.innerHTML = tab === 'messages'
+          ? '<th>ID</th><th>Date</th><th>Name</th><th>Phone / Email</th><th>Subject</th><th>Actions</th>'
+          : '<th>ID</th><th>Date</th><th>Name</th><th>Course</th><th>Phone</th><th>Status</th><th>Actions</th>';
       }
       tabs.forEach(function (t) {
         t.addEventListener('click', function () {

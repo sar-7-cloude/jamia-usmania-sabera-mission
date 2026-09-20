@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admissions 2026–27 — Jamia Usmania Sabera Mission</title>
+  <meta name="description" content="Apply for admission to Jamia Usmania Sabera Mission. Fill the online enquiry form — our office will contact you with the entrance test date and documents required.">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-in">
+      <a href="tel:+919000000000"><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>+91 90000 00000</a>
+      <a href="mailto:info@jamiausmania.org"><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>info@jamiausmania.org</a>
+      <span class="top-links"><a href="admin.html">Admin Login</a></span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-in">
+      <a class="brand" href="index.html">
+        <img src="images/logo.svg" alt="Jamia Usmania Sabera Mission logo">
+        <span class="brand-txt"><strong>JAMIA USMANIA</strong><small>SABERA MISSION</small></span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="courses.html">Courses</a>
+        <a href="admission.html" class="active">Admissions</a>
+        <a href="gallery.html">Gallery & Events</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="page-banner">
+    <div class="container">
+      <h1>Admissions 2026–27</h1>
+      <p>Fill the enquiry form below — the office will contact you with the next steps</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container events-split" style="align-items:start">
+
+      <!-- Admission form -->
+      <div id="admissionFormWrap">
+        <div class="form-card">
+          <h2 style="margin-bottom:1.2rem;font-size:1.25rem">Student Enquiry Form</h2>
+          <p class="muted" style="font-size:.88rem;margin-bottom:1.3rem">Fields marked <span class="req" style="color:#c0392b">*</span> are required. Your enquiry is saved securely and reviewed by our admission office.</p>
+
+          <form id="admissionForm" novalidate>
+            <div class="form-row two">
+              <div class="field">
+                <label for="admName">Student's Full Name <span class="req">*</span></label>
+                <input type="text" id="admName" name="admName" data-validate="name" required maxlength="40" placeholder="e.g. Mohammed Ahmed" autocomplete="name">
+                <span class="err"></span>
+              </div>
+              <div class="field">
+                <label for="admFather">Father's Name <span class="req">*</span></label>
+                <input type="text" id="admFather" name="admFather" data-validate="name" required maxlength="40" placeholder="e.g. Abdul Rahman" autocomplete="off">
+                <span class="err"></span>
+              </div>
+            </div>
+
+            <div class="form-row two">
+              <div class="field">
+                <label for="admDob">Date of Birth <span class="req">*</span></label>
+                <input type="date" id="admDob" name="admDob" data-validate="dob" required>
+                <span class="err"></span>
+              </div>
+              <div class="field">
+                <label>Gender <span class="req">*</span></label>
+                <div class="radio-row">
+                  <label><input type="radio" name="gender" value="Male" checked> Male</label>
+                  <label><input type="radio" name="gender" value="Female"> Female</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="admCourse">Course Applying For <span class="req">*</span></label>
+              <select id="admCourse" name="admCourse" required>
+                <option value="">— Select a course —</option>
+              </select>
+              <span class="err"></span>
+            </div>
+
+            <div class="form-row two">
+              <div class="field">
+                <label for="admPhone">Mobile Number (WhatsApp preferred) <span class="req">*</span></label>
+                <input type="tel" id="admPhone" name="admPhone" data-validate="phone" required maxlength="15" inputmode="numeric" placeholder="10-digit mobile number" autocomplete="tel">
+                <span class="err"></span>
+              </div>
+              <div class="field">
+                <label for="admEmail">Email <span style="font-weight:400;color:#5b6b66">(optional)</span></label>
+                <input type="email" id="admEmail" name="admEmail" data-validate="email" maxlength="50" placeholder="you@example.com" autocomplete="email">
+                <span class="err"></span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="admAddress">Residential Address <span class="req">*</span></label>
+              <textarea id="admAddress" name="admAddress" required maxlength="300" placeholder="House no., street, area, city, PIN code"></textarea>
+              <span class="err"></span>
+            </div>
+
+            <div class="field">
+              <label for="admPrevious">Previous Education <span style="font-weight:400;color:#5b6b66">(optional)</span></label>
+              <input type="text" id="admPrevious" name="admPrevious" maxlength="100" placeholder="e.g. Completed Class 5 / 2 paraas of Nazra">
+            </div>
+
+            <div class="field">
+              <label for="admMessage">Anything else we should know? <span style="font-weight:400;color:#5b6b66">(optional)</span></label>
+              <textarea id="admMessage" name="admMessage" maxlength="500" placeholder="Hostel needed, sibling already studying, scholarship request…"></textarea>
+            </div>
+
+            <div class="field check-row">
+              <label><input type="checkbox" required> I permit Jamia Usmania Sabera Mission to contact me by phone or WhatsApp regarding this enquiry. <span class="req">*</span></label>
+              <span class="err"></span>
+            </div>
+
+            <button type="submit" class="btn btn-block">Submit Enquiry</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Success panel -->
+      <div id="admissionSuccess" hidden>
+        <div class="form-card success-card">
+          <div class="tick">✓</div>
+          <h2>JazakAllahu Khairan!</h2>
+          <p>Your enquiry has been received successfully. Please note down your enquiry number:</p>
+          <div class="enq-id" id="enqId">—</div>
+          <p class="muted" style="font-size:.88rem;text-align:left;margin:1rem 0 1.4rem">
+            <strong>What happens next?</strong><br>
+            1. Our admission office will call you within 2 working days.<br>
+            2. Visit the campus with the required documents for a short entrance test (Quran reading level).<br>
+            3. On selection, complete the admission form at the office and pay the one-time admission fee.
+          </p>
+          <button class="btn btn-outline" id="newEnquiry">Submit Another Enquiry</button>
+        </div>
+      </div>
+
+      <!-- Side info -->
+      <aside>
+        <div class="side-card">
+          <h3>Admission Process</h3>
+          <ol class="steps">
+            <li>Submit this online enquiry form</li>
+            <li>Receive a call from the admission office</li>
+            <li>Visit campus with documents & entrance test</li>
+            <li>Selection & fee payment at the office</li>
+            <li>Welcome to the Jamia family!</li>
+          </ol>
+        </div>
+        <div class="side-card">
+          <h3>Documents Required</h3>
+          <ul class="doc-list">
+            <li>Aadhaar card of the student (copy)</li>
+            <li>Birth certificate</li>
+            <li>Previous school / madrasa report card</li>
+            <li>Transfer certificate (if applicable)</li>
+            <li>4 passport-size photographs</li>
+            <li>Guardian's ID proof (for hostel)</li>
+          </ul>
+        </div>
+        <div class="side-card">
+          <h3>Important Dates</h3>
+          <ul class="doc-list">
+            <li>Application review: every Tuesday & Friday</li>
+            <li>Entrance tests: Sundays, 10:00 am</li>
+            <li>Session begins: 5 April 2027 (1368 AH)</li>
+          </ul>
+        </div>
+        <div class="form-note">
+          Hostel is available for boys above 8 years. For girls' admission, please contact the office directly — the girls' section has a separate campus and staff.
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <img src="images/logo.svg" alt="Logo" width="48" height="48">
+          <span class="brand-txt"><strong style="color:#fff">JAMIA USMANIA</strong><small>SABERA MISSION</small></span>
+        </div>
+        <p class="about-blurb" style="margin-top:1rem">A non-profit centre of Islamic and modern education, serving the community since 2001 with knowledge, character and service.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="about.html">About Us</a>
+        <a href="courses.html">Courses & Fees</a>
+        <a href="admission.html">Admissions</a>
+        <a href="gallery.html">Gallery & Events</a>
+        <a href="contact.html">Contact</a>
+        <a href="admin.html">Admin Login</a>
+      </div>
+      <div>
+        <h4>Get in Touch</h4>
+        <ul class="f-contact">
+          <li><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Jamia Usmania Sabera Mission, 12-4-5 Near Idgah, Azampura, Hyderabad – 500020</li>
+          <li><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>+91 90000 00000</li>
+          <li><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>info@jamiausmania.org</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">© <span id="year">2026</span> Jamia Usmania Sabera Mission. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <button class="chat-fab" id="chatFab" aria-label="Chat with the Jamia assistant">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  </button>
+  <div class="chat-panel" id="chatPanel" hidden>
+    <div class="chat-head">
+      <div><h3>Ask Jamia Assistant</h3><small>AI-powered · answers about courses & admissions</small></div>
+      <button id="chatClose" aria-label="Close chat">×</button>
+    </div>
+    <div class="chat-body" id="chatBody"></div>
+    <div class="chat-suggest">
+      <button>What courses do you offer?</button>
+      <button>What are the fees?</button>
+      <button>Is hostel available?</button>
+    </div>
+    <form class="chat-form" id="chatForm">
+      <input id="chatInput" type="text" placeholder="Type your question…" maxlength="500" autocomplete="off">
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
